@@ -1,6 +1,8 @@
+
 import { useState } from "react";
 import FontCard from "@/components/FontCard";
 import FontDetailModal from "@/components/FontDetailModal";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Search, Type } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
@@ -415,9 +417,9 @@ const Index = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
       {/* Header */}
-      <header className="bg-white border-b border-slate-200 shadow-sm">
+      <header className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -427,13 +429,16 @@ const Index = () => {
                 className="h-10 w-10"
               />
               <div>
-                <h1 className="text-2xl font-bold text-slate-900">Font Feed</h1>
-                <p className="text-sm text-slate-600">Discover & Download Beautiful Fonts</p>
+                <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Font Feed</h1>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Discover & Download Beautiful Fonts</p>
               </div>
             </div>
-            <div className="text-right">
-              <p className="text-sm text-slate-600">{filteredFonts.length} fonts available</p>
-              <p className="text-xs text-slate-500">Free for personal & commercial use</p>
+            <div className="flex items-center space-x-4">
+              <div className="text-right">
+                <p className="text-sm text-slate-600 dark:text-slate-400">{filteredFonts.length} fonts available</p>
+                <p className="text-xs text-slate-500 dark:text-slate-500">Free for personal & commercial use</p>
+              </div>
+              <ThemeToggle />
             </div>
           </div>
         </div>
@@ -443,13 +448,13 @@ const Index = () => {
         {/* Search and Filter */}
         <div className="mb-8 space-y-4">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-slate-400" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-slate-400 dark:text-slate-500" />
             <Input
               type="text"
               placeholder="Search fonts by name or description..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 h-12 text-lg bg-white border-slate-200 focus:border-blue-500 focus:ring-blue-500"
+              className="pl-10 h-12 text-lg bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 focus:border-blue-500 focus:ring-blue-500 dark:text-slate-100"
             />
           </div>
           
@@ -461,7 +466,7 @@ const Index = () => {
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                   selectedCategory === category
                     ? "bg-blue-600 text-white shadow-lg"
-                    : "bg-white text-slate-600 hover:bg-slate-100 border border-slate-200"
+                    : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700"
                 }`}
               >
                 {category}
@@ -483,9 +488,9 @@ const Index = () => {
 
         {filteredFonts.length === 0 && (
           <div className="text-center py-12">
-            <Type className="h-12 w-12 text-slate-400 mx-auto mb-4" />
-            <h3 className="text-lg font-medium text-slate-900 mb-2">No fonts found</h3>
-            <p className="text-slate-600">Try adjusting your search or filter criteria</p>
+            <Type className="h-12 w-12 text-slate-400 dark:text-slate-500 mx-auto mb-4" />
+            <h3 className="text-lg font-medium text-slate-900 dark:text-slate-100 mb-2">No fonts found</h3>
+            <p className="text-slate-600 dark:text-slate-400">Try adjusting your search or filter criteria</p>
           </div>
         )}
       </div>
