@@ -267,13 +267,11 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
-                <img 
-                  src="/lovable-uploads/d51cb5e2-28be-4375-a7b7-ad3053505d9b.png" 
-                  alt="Font Feed Logo" 
-                  className="h-6 w-6"
-                />
-              </div>
+              <img 
+                src="/lovable-uploads/d51cb5e2-28be-4375-a7b7-ad3053505d9b.png" 
+                alt="Font Feed Logo" 
+                className="h-10 w-10"
+              />
               <div>
                 <h1 className="text-2xl font-bold text-slate-900">Font Feed</h1>
                 <p className="text-sm text-slate-600">Discover & Download Beautiful Fonts</p>
