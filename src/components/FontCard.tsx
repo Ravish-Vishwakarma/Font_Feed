@@ -1,7 +1,7 @@
 
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Download } from "lucide-react";
+import { Star, Download } from "lucide-react";
 import { Font } from "@/pages/Index";
 
 interface FontCardProps {
@@ -61,8 +61,9 @@ const FontCard = ({ font, onClick }: FontCardProps) => {
               {font.category}
             </Badge>
           </div>
-          <div className="flex items-center space-x-1 text-slate-600 dark:text-slate-400">
-            <span className="text-sm font-medium">{font.weights.length} weights</span>
+          <div className="flex items-center space-x-1 text-yellow-500">
+            <Star className="h-4 w-4 fill-current" />
+            <span className="text-sm font-medium text-slate-600 dark:text-slate-400">{font.popularity}</span>
           </div>
         </div>
 
