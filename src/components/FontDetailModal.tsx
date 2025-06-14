@@ -86,8 +86,8 @@ const FontDetailModal = ({ font, onClose }: FontDetailModalProps) => {
 
         <div className="space-y-6">
           {/* Description */}
-          <Card className="p-6 bg-gradient-to-r from-slate-50 to-slate-100">
-            <p className="text-slate-700 leading-relaxed">{font.description}</p>
+          <Card className="p-6 bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700">
+            <p className="text-slate-700 dark:text-slate-200 leading-relaxed">{font.description}</p>
           </Card>
 
           {/* Font Preview - Moved to top */}
@@ -100,10 +100,10 @@ const FontDetailModal = ({ font, onClose }: FontDetailModalProps) => {
               {previewVariations.map((variation, index) => (
                 <Card key={index} className="p-4">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-medium text-slate-600">{variation.label}</span>
+                    <span className="text-sm font-medium text-slate-600 dark:text-slate-300">{variation.label}</span>
                   </div>
                   <div 
-                    className="text-slate-800 text-xl"
+                    className="text-slate-900 dark:text-white text-xl"
                     style={{ 
                       fontFamily: getFontFamily(font.name),
                       fontStyle: variation.style,
@@ -123,28 +123,28 @@ const FontDetailModal = ({ font, onClose }: FontDetailModalProps) => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <Card className="p-4 text-center">
               <User className="h-6 w-6 mx-auto mb-2 text-blue-600" />
-              <div className="font-medium text-slate-900">{font.designer}</div>
-              <div className="text-sm text-slate-500">Designer</div>
+              <div className="font-medium text-slate-900 dark:text-slate-100">{font.designer}</div>
+              <div className="text-sm text-slate-500 dark:text-slate-400">Designer</div>
             </Card>
             <Card className="p-4 text-center">
               <Calendar className="h-6 w-6 mx-auto mb-2 text-green-600" />
-              <div className="font-medium text-slate-900">{font.year}</div>
-              <div className="text-sm text-slate-500">Year</div>
+              <div className="font-medium text-slate-900 dark:text-slate-100">{font.year}</div>
+              <div className="text-sm text-slate-500 dark:text-slate-400">Year</div>
             </Card>
             <Card className="p-4 text-center">
               <Palette className="h-6 w-6 mx-auto mb-2 text-purple-600" />
-              <div className="font-medium text-slate-900">{font.weights.length}</div>
-              <div className="text-sm text-slate-500">Weights</div>
+              <div className="font-medium text-slate-900 dark:text-slate-100">{font.weights.length}</div>
+              <div className="text-sm text-slate-500 dark:text-slate-400">Weights</div>
             </Card>
             <Card className="p-4 text-center">
               <Star className="h-6 w-6 mx-auto mb-2 text-yellow-500 fill-current" />
-              <div className="font-medium text-slate-900">{font.popularity}%</div>
-              <div className="text-sm text-slate-500">Popularity</div>
+              <div className="font-medium text-slate-900 dark:text-slate-100">{font.popularity}%</div>
+              <div className="text-sm text-slate-500 dark:text-slate-400">Popularity</div>
             </Card>
           </div>
 
           {/* Download Buttons */}
-          <Card className="p-6 bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
+          <Card className="p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-blue-200 dark:border-blue-800">
             <h3 className="text-lg font-semibold mb-4 text-center">Download Options</h3>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -160,7 +160,7 @@ const FontDetailModal = ({ font, onClose }: FontDetailModalProps) => {
                 <Button 
                   onClick={handleGoogleFontsDownload}
                   variant="outline"
-                  className="border-purple-300 text-purple-700 hover:bg-purple-50 px-8 py-3 h-auto"
+                  className="border-purple-300 text-purple-700 hover:bg-purple-50 dark:border-purple-600 dark:text-purple-300 dark:hover:bg-purple-900/20 px-8 py-3 h-auto"
                   size="lg"
                 >
                   <ExternalLink className="h-5 w-5 mr-2" />
@@ -168,7 +168,7 @@ const FontDetailModal = ({ font, onClose }: FontDetailModalProps) => {
                 </Button>
               )}
             </div>
-            <p className="text-center text-sm text-slate-600 mt-4">
+            <p className="text-center text-sm text-slate-600 dark:text-slate-300 mt-4">
               Free for personal and commercial use
             </p>
           </Card>

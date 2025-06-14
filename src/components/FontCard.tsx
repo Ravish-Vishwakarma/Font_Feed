@@ -70,12 +70,12 @@ const FontCard = ({ font, onClick }: FontCardProps) => {
         {/* Font Preview */}
         <div className="mb-4">
           <div 
-            className="text-2xl font-medium text-slate-800 dark:text-slate-200 mb-2 leading-tight"
+            className="text-2xl font-medium text-slate-900 dark:text-white mb-2 leading-tight"
             style={{ fontFamily: getFontFamily(font.name) }}
           >
             {font.name}
           </div>
-          <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+          <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
             {font.preview}
           </p>
         </div>
@@ -83,18 +83,18 @@ const FontCard = ({ font, onClick }: FontCardProps) => {
         {/* Font Info */}
         <div className="space-y-2 mb-4">
           <div className="flex justify-between text-sm">
-            <span className="text-slate-500 dark:text-slate-500">Designer:</span>
-            <span className="text-slate-700 dark:text-slate-300 font-medium">{font.designer}</span>
+            <span className="text-slate-500 dark:text-slate-400">Designer:</span>
+            <span className="text-slate-700 dark:text-slate-200 font-medium">{font.designer}</span>
           </div>
           <div className="flex justify-between text-sm">
-            <span className="text-slate-500 dark:text-slate-500">Weights:</span>
-            <span className="text-slate-700 dark:text-slate-300 font-medium">{font.weights.length} available</span>
+            <span className="text-slate-500 dark:text-slate-400">Weights:</span>
+            <span className="text-slate-700 dark:text-slate-200 font-medium">{font.weights.length} available</span>
           </div>
         </div>
 
         {/* Footer */}
         <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
-          <div className="flex items-center space-x-1 text-slate-500 dark:text-slate-500">
+          <div className="flex items-center space-x-1 text-slate-500 dark:text-slate-400">
             <Download className="h-4 w-4" />
             <span className="text-sm">Click to download</span>
           </div>
