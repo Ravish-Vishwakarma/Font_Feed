@@ -30,6 +30,29 @@ const FontDetailModal = ({ font, onClose }: FontDetailModalProps) => {
     }
   };
 
+  const getFontFamily = (fontName: string) => {
+    const fontMap: { [key: string]: string } = {
+      'Inter': 'Inter, sans-serif',
+      'Playfair Display': 'Playfair Display, serif',
+      'Roboto': 'Roboto, sans-serif',
+      'Montserrat': 'Montserrat, sans-serif',
+      'Open Sans': 'Open Sans, sans-serif',
+      'Lora': 'Lora, serif',
+      'Poppins': 'Poppins, sans-serif',
+      'Source Sans Pro': 'Source Sans Pro, sans-serif',
+      'Oswald': 'Oswald, sans-serif',
+      'Merriweather': 'Merriweather, serif',
+      'Nunito': 'Nunito, sans-serif',
+      'Raleway': 'Raleway, sans-serif',
+      'Dancing Script': 'Dancing Script, cursive',
+      'Lobster': 'Lobster, cursive',
+      'Ubuntu': 'Ubuntu, sans-serif',
+      'Crimson Text': 'Crimson Text, serif'
+    };
+    
+    return fontMap[fontName] || 'system-ui, sans-serif';
+  };
+
   const previewVariations = [
     { text: "The quick brown fox jumps over the lazy dog", style: "normal", weight: "400", label: "Regular" },
     { text: "The quick brown fox jumps over the lazy dog", style: "italic", weight: "400", label: "Italic" },
@@ -71,9 +94,7 @@ const FontDetailModal = ({ font, onClose }: FontDetailModalProps) => {
                   <div 
                     className="text-slate-800 text-xl"
                     style={{ 
-                      fontFamily: font.name === 'Inter' ? 'Inter, sans-serif' : 
-                                  font.name === 'Playfair Display' ? 'Playfair Display, serif' :
-                                  'system-ui, sans-serif',
+                      fontFamily: getFontFamily(font.name),
                       fontStyle: variation.style,
                       fontWeight: variation.weight
                     }}
