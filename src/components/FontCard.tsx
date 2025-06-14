@@ -10,6 +10,30 @@ interface FontCardProps {
 }
 
 const FontCard = ({ font, onClick }: FontCardProps) => {
+  // Get the appropriate font family for rendering
+  const getFontFamily = (fontName: string) => {
+    switch (fontName.toLowerCase()) {
+      case 'inter':
+        return 'Inter, sans-serif';
+      case 'playfair display':
+        return 'Playfair Display, serif';
+      case 'roboto':
+        return 'Roboto, sans-serif';
+      case 'montserrat':
+        return 'Montserrat, sans-serif';
+      case 'open sans':
+        return 'Open Sans, sans-serif';
+      case 'lora':
+        return 'Lora, serif';
+      case 'poppins':
+        return 'Poppins, sans-serif';
+      case 'source sans pro':
+        return 'Source Sans Pro, sans-serif';
+      default:
+        return 'system-ui, sans-serif';
+    }
+  };
+
   return (
     <Card 
       className="group cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white border border-slate-200 overflow-hidden"
@@ -19,7 +43,10 @@ const FontCard = ({ font, onClick }: FontCardProps) => {
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div>
-            <h3 className="font-semibold text-lg text-slate-900 group-hover:text-blue-600 transition-colors">
+            <h3 
+              className="font-semibold text-lg text-slate-900 group-hover:text-blue-600 transition-colors"
+              style={{ fontFamily: getFontFamily(font.name) }}
+            >
               {font.name}
             </h3>
             <Badge variant="secondary" className="mt-1 text-xs">
@@ -36,7 +63,7 @@ const FontCard = ({ font, onClick }: FontCardProps) => {
         <div className="mb-4">
           <div 
             className="text-2xl font-medium text-slate-800 mb-2 leading-tight"
-            style={{ fontFamily: font.name === 'Inter' ? 'Inter, sans-serif' : 'system-ui, sans-serif' }}
+            style={{ fontFamily: getFontFamily(font.name) }}
           >
             {font.name}
           </div>
@@ -50,10 +77,6 @@ const FontCard = ({ font, onClick }: FontCardProps) => {
           <div className="flex justify-between text-sm">
             <span className="text-slate-500">Designer:</span>
             <span className="text-slate-700 font-medium">{font.designer}</span>
-          </div>
-          <div className="flex justify-between text-sm">
-            <span className="text-slate-500">Year:</span>
-            <span className="text-slate-700 font-medium">{font.year}</span>
           </div>
           <div className="flex justify-between text-sm">
             <span className="text-slate-500">Weights:</span>

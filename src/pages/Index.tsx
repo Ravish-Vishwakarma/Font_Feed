@@ -1,8 +1,6 @@
-
 import { useState } from "react";
 import FontCard from "@/components/FontCard";
 import FontDetailModal from "@/components/FontDetailModal";
-import { Card } from "@/components/ui/card";
 import { Search, Type } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
@@ -202,22 +200,6 @@ const Index = () => {
               </button>
             ))}
           </div>
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <Card className="p-6 bg-gradient-to-r from-blue-50 to-blue-100 border-blue-200">
-            <div className="text-2xl font-bold text-blue-700">{fonts.length}</div>
-            <div className="text-sm text-blue-600">Total Fonts</div>
-          </Card>
-          <Card className="p-6 bg-gradient-to-r from-purple-50 to-purple-100 border-purple-200">
-            <div className="text-2xl font-bold text-purple-700">{categories.length - 1}</div>
-            <div className="text-sm text-purple-600">Categories</div>
-          </Card>
-          <Card className="p-6 bg-gradient-to-r from-green-50 to-green-100 border-green-200">
-            <div className="text-2xl font-bold text-green-700">100%</div>
-            <div className="text-sm text-green-600">Free Fonts</div>
-          </Card>
         </div>
 
         {/* Font Grid */}
