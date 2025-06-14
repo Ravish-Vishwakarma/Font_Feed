@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Download } from "lucide-react";
@@ -70,7 +69,7 @@ const FontCard = ({ font, onClick }: FontCardProps) => {
         {/* Font Preview */}
         <div className="mb-4">
           <div 
-            className="text-4xl font-medium text-slate-900 dark:text-slate-100 mb-4 leading-tight"
+            className="text-5xl font-medium text-slate-900 dark:text-slate-100 mb-4 leading-none truncate"
             style={{ fontFamily: getFontFamily(font.name) }}
           >
             {font.name}
