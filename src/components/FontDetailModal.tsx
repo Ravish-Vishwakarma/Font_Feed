@@ -47,7 +47,18 @@ const FontDetailModal = ({ font, onClose }: FontDetailModalProps) => {
       'Dancing Script': 'Dancing Script, cursive',
       'Lobster': 'Lobster, cursive',
       'Ubuntu': 'Ubuntu, sans-serif',
-      'Crimson Text': 'Crimson Text, serif'
+      'Crimson Text': 'Crimson Text, serif',
+      'JetBrains Mono': 'JetBrains Mono, monospace',
+      'Fira Code': 'Fira Code, monospace',
+      'Space Mono': 'Space Mono, monospace',
+      'Inconsolata': 'Inconsolata, monospace',
+      'Source Code Pro': 'Source Code Pro, monospace',
+      'Roboto Mono': 'Roboto Mono, monospace',
+      'Rubik': 'Rubik, sans-serif',
+      'Quicksand': 'Quicksand, sans-serif',
+      'Comfortaa': 'Comfortaa, cursive',
+      'Pacifico': 'Pacifico, cursive',
+      'Righteous': 'Righteous, cursive'
     };
     
     return fontMap[fontName] || 'system-ui, sans-serif';

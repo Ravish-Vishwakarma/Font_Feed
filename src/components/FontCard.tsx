@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Download } from "lucide-react";
@@ -12,42 +11,37 @@ interface FontCardProps {
 const FontCard = ({ font, onClick }: FontCardProps) => {
   // Get the appropriate font family for rendering
   const getFontFamily = (fontName: string) => {
-    switch (fontName.toLowerCase()) {
-      case 'inter':
-        return 'Inter, sans-serif';
-      case 'playfair display':
-        return 'Playfair Display, serif';
-      case 'roboto':
-        return 'Roboto, sans-serif';
-      case 'montserrat':
-        return 'Montserrat, sans-serif';
-      case 'open sans':
-        return 'Open Sans, sans-serif';
-      case 'lora':
-        return 'Lora, serif';
-      case 'poppins':
-        return 'Poppins, sans-serif';
-      case 'source sans pro':
-        return 'Source Sans Pro, sans-serif';
-      case 'oswald':
-        return 'Oswald, sans-serif';
-      case 'merriweather':
-        return 'Merriweather, serif';
-      case 'nunito':
-        return 'Nunito, sans-serif';
-      case 'raleway':
-        return 'Raleway, sans-serif';
-      case 'dancing script':
-        return 'Dancing Script, cursive';
-      case 'lobster':
-        return 'Lobster, cursive';
-      case 'ubuntu':
-        return 'Ubuntu, sans-serif';
-      case 'crimson text':
-        return 'Crimson Text, serif';
-      default:
-        return 'system-ui, sans-serif';
-    }
+    const fontMap: { [key: string]: string } = {
+      'inter': 'Inter, sans-serif',
+      'playfair display': 'Playfair Display, serif',
+      'roboto': 'Roboto, sans-serif',
+      'montserrat': 'Montserrat, sans-serif',
+      'open sans': 'Open Sans, sans-serif',
+      'lora': 'Lora, serif',
+      'poppins': 'Poppins, sans-serif',
+      'source sans pro': 'Source Sans Pro, sans-serif',
+      'oswald': 'Oswald, sans-serif',
+      'merriweather': 'Merriweather, serif',
+      'nunito': 'Nunito, sans-serif',
+      'raleway': 'Raleway, sans-serif',
+      'dancing script': 'Dancing Script, cursive',
+      'lobster': 'Lobster, cursive',
+      'ubuntu': 'Ubuntu, sans-serif',
+      'crimson text': 'Crimson Text, serif',
+      'jetbrains mono': 'JetBrains Mono, monospace',
+      'fira code': 'Fira Code, monospace',
+      'space mono': 'Space Mono, monospace',
+      'inconsolata': 'Inconsolata, monospace',
+      'source code pro': 'Source Code Pro, monospace',
+      'roboto mono': 'Roboto Mono, monospace',
+      'rubik': 'Rubik, sans-serif',
+      'quicksand': 'Quicksand, sans-serif',
+      'comfortaa': 'Comfortaa, cursive',
+      'pacifico': 'Pacifico, cursive',
+      'righteous': 'Righteous, cursive'
+    };
+    
+    return fontMap[fontName.toLowerCase()] || 'system-ui, sans-serif';
   };
 
   return (
