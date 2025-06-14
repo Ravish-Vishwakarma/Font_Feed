@@ -30,12 +30,14 @@ const FontDetailModal = ({ font, onClose }: FontDetailModalProps) => {
     }
   };
 
-  const sampleTexts = [
-    "The quick brown fox jumps over the lazy dog",
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-    "abcdefghijklmnopqrstuvwxyz",
-    "1234567890 !@#$%^&*()",
-    "Typography is the art and technique of arranging type",
+  const previewVariations = [
+    { text: "The quick brown fox jumps over the lazy dog", style: "normal", weight: "400", label: "Regular" },
+    { text: "The quick brown fox jumps over the lazy dog", style: "italic", weight: "400", label: "Italic" },
+    { text: "The quick brown fox jumps over the lazy dog", style: "normal", weight: "700", label: "Bold" },
+    { text: "The quick brown fox jumps over the lazy dog", style: "italic", weight: "700", label: "Bold Italic" },
+    { text: "ABCDEFGHIJKLMNOPQRSTUVWXYZ", style: "normal", weight: "400", label: "Uppercase" },
+    { text: "abcdefghijklmnopqrstuvwxyz", style: "normal", weight: "400", label: "Lowercase" },
+    { text: "1234567890 !@#$%^&*()", style: "normal", weight: "400", label: "Numbers & Symbols" },
   ];
 
   return (
@@ -43,9 +45,6 @@ const FontDetailModal = ({ font, onClose }: FontDetailModalProps) => {
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="flex items-center space-x-3 text-2xl">
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
-              <Type className="h-5 w-5 text-white" />
-            </div>
             <span>{font.name}</span>
             <Badge variant="secondary">{font.category}</Badge>
           </DialogTitle>
@@ -56,6 +55,37 @@ const FontDetailModal = ({ font, onClose }: FontDetailModalProps) => {
           <Card className="p-6 bg-gradient-to-r from-slate-50 to-slate-100">
             <p className="text-slate-700 leading-relaxed">{font.description}</p>
           </Card>
+
+          {/* Font Preview - Moved to top */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 flex items-center">
+              <Type className="h-5 w-5 mr-2 text-blue-600" />
+              Font Preview
+            </h3>
+            <div className="space-y-4">
+              {previewVariations.map((variation, index) => (
+                <Card key={index} className="p-4">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm font-medium text-slate-600">{variation.label}</span>
+                  </div>
+                  <div 
+                    className="text-slate-800 text-xl"
+                    style={{ 
+                      fontFamily: font.name === 'Inter' ? 'Inter, sans-serif' : 
+                                  font.name === 'Playfair Display' ? 'Playfair Display, serif' :
+                                  'system-ui, sans-serif',
+                      fontStyle: variation.style,
+                      fontWeight: variation.weight
+                    }}
+                  >
+                    {variation.text}
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          <Separator />
 
           {/* Font Info Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -104,38 +134,6 @@ const FontDetailModal = ({ font, onClose }: FontDetailModalProps) => {
                 <Badge key={style} variant="outline" className="px-3 py-1 capitalize">
                   {style}
                 </Badge>
-              ))}
-            </div>
-          </div>
-
-          <Separator />
-
-          {/* Font Preview */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 flex items-center">
-              <Type className="h-5 w-5 mr-2 text-blue-600" />
-              Font Preview
-            </h3>
-            <div className="space-y-4">
-              {sampleTexts.map((text, index) => (
-                <Card key={index} className="p-4">
-                  <div 
-                    className={`text-slate-800 ${
-                      index === 0 ? 'text-2xl' : 
-                      index === 1 ? 'text-xl font-bold tracking-wider' :
-                      index === 2 ? 'text-lg tracking-wide' :
-                      index === 3 ? 'text-base font-mono' :
-                      'text-base leading-relaxed'
-                    }`}
-                    style={{ 
-                      fontFamily: font.name === 'Inter' ? 'Inter, sans-serif' : 
-                                  font.name === 'Playfair Display' ? 'Playfair Display, serif' :
-                                  'system-ui, sans-serif' 
-                    }}
-                  >
-                    {text}
-                  </div>
-                </Card>
               ))}
             </div>
           </div>
