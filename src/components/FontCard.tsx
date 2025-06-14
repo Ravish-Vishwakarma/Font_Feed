@@ -53,11 +53,11 @@ const FontCard = ({ font, onClick }: FontCardProps) => {
       <div className="p-6">
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
-          <div>
+          <div className="flex items-center gap-2 flex-1">
             <h3 className="font-semibold text-lg text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
               {font.name}
             </h3>
-            <Badge variant="secondary" className="mt-1 text-xs dark:bg-slate-700 dark:text-slate-300">
+            <Badge variant="secondary" className="text-xs dark:bg-slate-700 dark:text-slate-300">
               {font.category}
             </Badge>
           </div>
