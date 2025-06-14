@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import FontCard from "@/components/FontCard";
 import FontDetailModal from "@/components/FontDetailModal";
@@ -420,26 +419,17 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
       {/* Header */}
       <header className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-sm">
-        <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 py-6">
+        <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <img 
                 src="/lovable-uploads/d51cb5e2-28be-4375-a7b7-ad3053505d9b.png" 
                 alt="Font Feed Logo" 
-                className="h-10 w-10"
+                className="h-8 w-8"
               />
-              <div>
-                <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Font Feed</h1>
-                <p className="text-sm text-slate-600 dark:text-slate-400">Discover & Download Beautiful Fonts</p>
-              </div>
+              <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100">Font Feed</h1>
             </div>
-            <div className="flex items-center space-x-4">
-              <div className="text-right">
-                <p className="text-sm text-slate-600 dark:text-slate-400">{filteredFonts.length} fonts available</p>
-                <p className="text-xs text-slate-500 dark:text-slate-500">Free for personal & commercial use</p>
-              </div>
-              <ThemeToggle />
-            </div>
+            <ThemeToggle />
           </div>
         </div>
       </header>
@@ -458,20 +448,25 @@ const Index = () => {
             />
           </div>
           
-          <div className="flex flex-wrap gap-2">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                  selectedCategory === category
-                    ? "bg-blue-600 text-white shadow-lg"
-                    : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="flex flex-wrap gap-2">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                    selectedCategory === category
+                      ? "bg-blue-600 text-white shadow-lg"
+                      : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700"
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+            <div className="text-sm text-slate-600 dark:text-slate-400">
+              {filteredFonts.length} fonts available
+            </div>
           </div>
         </div>
 
