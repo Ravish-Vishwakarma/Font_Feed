@@ -111,33 +111,6 @@ const FontDetailModal = ({ font, onClose }: FontDetailModalProps) => {
             </Card>
           </div>
 
-          {/* Font Weights */}
-          <div>
-            <h3 className="text-lg font-semibold mb-3 flex items-center">
-              <Palette className="h-5 w-5 mr-2 text-purple-600" />
-              Available Weights
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {font.weights.map((weight) => (
-                <Badge key={weight} variant="outline" className="px-3 py-1">
-                  {weight === "400" ? "Regular" : weight === "700" ? "Bold" : weight}
-                </Badge>
-              ))}
-            </div>
-          </div>
-
-          {/* Font Styles */}
-          <div>
-            <h3 className="text-lg font-semibold mb-3">Available Styles</h3>
-            <div className="flex flex-wrap gap-2">
-              {font.styles.map((style) => (
-                <Badge key={style} variant="outline" className="px-3 py-1 capitalize">
-                  {style}
-                </Badge>
-              ))}
-            </div>
-          </div>
-
           {/* Download Buttons */}
           <Card className="p-6 bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
             <h3 className="text-lg font-semibold mb-4 text-center">Download Options</h3>
