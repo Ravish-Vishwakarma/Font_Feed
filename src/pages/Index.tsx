@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import FontCard from "@/components/FontCard";
 import FontDetailModal from "@/components/FontDetailModal";
@@ -131,6 +132,118 @@ const fonts: Font[] = [
     year: "2012",
     popularity: 89,
     fileUrl: "/fonts/source-sans-pro.zip"
+  },
+  {
+    id: "9",
+    name: "Oswald",
+    category: "Sans Serif",
+    description: "A reworking of the classic gothic typeface style historically represented by designs such as Alternate Gothic.",
+    preview: "Bold & Condensed Headlines",
+    weights: ["200", "300", "400", "500", "600", "700"],
+    styles: ["normal"],
+    googleFontsUrl: "https://fonts.google.com/specimen/Oswald",
+    designer: "Vernon Adams",
+    year: "2011",
+    popularity: 87,
+    fileUrl: "/fonts/oswald.zip"
+  },
+  {
+    id: "10",
+    name: "Merriweather",
+    category: "Serif",
+    description: "A serif typeface designed to be very readable on screens. It features a very large x-height, slightly condensed letterforms.",
+    preview: "Readable Serif for Screens",
+    weights: ["300", "400", "700", "900"],
+    styles: ["normal", "italic"],
+    googleFontsUrl: "https://fonts.google.com/specimen/Merriweather",
+    designer: "Sorkin Type",
+    year: "2010",
+    popularity: 85,
+    fileUrl: "/fonts/merriweather.zip"
+  },
+  {
+    id: "11",
+    name: "Nunito",
+    category: "Sans Serif",
+    description: "A well balanced sans serif typeface superfamily, with 2 versions: The project began with Nunito, created by Vernon Adams.",
+    preview: "Rounded & Friendly Sans",
+    weights: ["200", "300", "400", "500", "600", "700", "800", "900"],
+    styles: ["normal", "italic"],
+    googleFontsUrl: "https://fonts.google.com/specimen/Nunito",
+    designer: "Vernon Adams",
+    year: "2014",
+    popularity: 91,
+    fileUrl: "/fonts/nunito.zip"
+  },
+  {
+    id: "12",
+    name: "Raleway",
+    category: "Sans Serif",
+    description: "An elegant sans-serif typeface family intended for headings and other large size usage.",
+    preview: "Elegant Display Font",
+    weights: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+    styles: ["normal", "italic"],
+    googleFontsUrl: "https://fonts.google.com/specimen/Raleway",
+    designer: "Matt McInerney",
+    year: "2010",
+    popularity: 84,
+    fileUrl: "/fonts/raleway.zip"
+  },
+  {
+    id: "13",
+    name: "Dancing Script",
+    category: "Handwriting",
+    description: "A lively casual script where the letters bounce and change size slightly. Caps are big, and lowercase is small.",
+    preview: "Casual & Lively Script",
+    weights: ["400", "500", "600", "700"],
+    styles: ["normal"],
+    googleFontsUrl: "https://fonts.google.com/specimen/Dancing+Script",
+    designer: "Pablo Impallari",
+    year: "2010",
+    popularity: 82,
+    fileUrl: "/fonts/dancing-script.zip"
+  },
+  {
+    id: "14",
+    name: "Lobster",
+    category: "Display",
+    description: "The Lobster font took a different approach. The new OpenType format gave us the possibility to have multiple versions.",
+    preview: "Bold Script Display",
+    weights: ["400"],
+    styles: ["normal"],
+    googleFontsUrl: "https://fonts.google.com/specimen/Lobster",
+    designer: "Pablo Impallari",
+    year: "2010",
+    popularity: 79,
+    fileUrl: "/fonts/lobster.zip"
+  },
+  {
+    id: "15",
+    name: "Ubuntu",
+    category: "Sans Serif",
+    description: "The Ubuntu Font Family are a set of matching new libre/open fonts developed for the Ubuntu operating system.",
+    preview: "Humanist Ubuntu Style",
+    weights: ["300", "400", "500", "700"],
+    styles: ["normal", "italic"],
+    googleFontsUrl: "https://fonts.google.com/specimen/Ubuntu",
+    designer: "Dalton Maag",
+    year: "2010",
+    popularity: 86,
+    fileUrl: "/fonts/ubuntu.zip"
+  },
+  {
+    id: "16",
+    name: "Crimson Text",
+    category: "Serif",
+    description: "Crimson Text is a font family for book production in the tradition of beautiful oldstyle typefaces.",
+    preview: "Classic Book Typography",
+    weights: ["400", "600", "700"],
+    styles: ["normal", "italic"],
+    googleFontsUrl: "https://fonts.google.com/specimen/Crimson+Text",
+    designer: "Sebastian Kosch",
+    year: "2010",
+    popularity: 78,
+    fileUrl: "/fonts/crimson-text.zip"
   }
 ];
 

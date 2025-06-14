@@ -29,6 +29,22 @@ const FontCard = ({ font, onClick }: FontCardProps) => {
         return 'Poppins, sans-serif';
       case 'source sans pro':
         return 'Source Sans Pro, sans-serif';
+      case 'oswald':
+        return 'Oswald, sans-serif';
+      case 'merriweather':
+        return 'Merriweather, serif';
+      case 'nunito':
+        return 'Nunito, sans-serif';
+      case 'raleway':
+        return 'Raleway, sans-serif';
+      case 'dancing script':
+        return 'Dancing Script, cursive';
+      case 'lobster':
+        return 'Lobster, cursive';
+      case 'ubuntu':
+        return 'Ubuntu, sans-serif';
+      case 'crimson text':
+        return 'Crimson Text, serif';
       default:
         return 'system-ui, sans-serif';
     }
