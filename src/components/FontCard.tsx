@@ -61,10 +61,6 @@ const FontCard = ({ font, onClick }: FontCardProps) => {
               {font.category}
             </Badge>
           </div>
-          <div className="flex items-center space-x-1 text-yellow-500">
-            <Star className="h-4 w-4 fill-current" />
-            <span className="text-sm font-medium text-slate-600 dark:text-slate-400">{font.popularity}</span>
-          </div>
         </div>
 
         {/* Font Preview */}
@@ -84,8 +80,11 @@ const FontCard = ({ font, onClick }: FontCardProps) => {
             <span className="text-slate-700 dark:text-slate-200 font-medium">{font.designer}</span>
           </div>
           <div className="flex justify-between text-sm">
-            <span className="text-slate-500 dark:text-slate-400">Weights:</span>
-            <span className="text-slate-700 dark:text-slate-200 font-medium">{font.weights.length} available</span>
+            <span className="text-slate-500 dark:text-slate-400">Popularity:</span>
+            <div className="flex items-center space-x-1 text-yellow-500">
+              <Star className="h-4 w-4 fill-current" />
+              <span className="text-sm font-medium text-slate-600 dark:text-slate-400">{font.popularity}</span>
+            </div>
           </div>
         </div>
 
