@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import FontCard from "@/components/FontCard";
 import FontDetailModal from "@/components/FontDetailModal";
@@ -269,7 +268,11 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
-                <Type className="h-6 w-6 text-white" />
+                <img 
+                  src="/lovable-uploads/d51cb5e2-28be-4375-a7b7-ad3053505d9b.png" 
+                  alt="Font Feed Logo" 
+                  className="h-6 w-6"
+                />
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-slate-900">Font Feed</h1>
