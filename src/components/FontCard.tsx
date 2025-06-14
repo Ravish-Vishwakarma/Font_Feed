@@ -70,14 +70,11 @@ const FontCard = ({ font, onClick }: FontCardProps) => {
         {/* Font Preview */}
         <div className="mb-4">
           <div 
-            className="text-2xl font-medium text-slate-900 dark:text-white mb-2 leading-tight"
+            className="text-4xl font-medium text-slate-900 dark:text-slate-100 mb-4 leading-tight"
             style={{ fontFamily: getFontFamily(font.name) }}
           >
             {font.name}
           </div>
-          <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-            {font.preview}
-          </p>
         </div>
 
         {/* Font Info */}
